@@ -1,0 +1,34 @@
+repos:
+  -
+    repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      -
+        id: check-ast
+      -
+        id: check-case-conflict
+      -
+        id: check-executables-have-shebangs
+      -
+        id: check-merge-conflict
+      -
+        id: check-yaml
+      -
+        id: end-of-file-fixer
+      -
+        id: check-shebang-scripts-are-executable
+      -
+        id: detect-private-key
+      -
+        id: trailing-whitespace
+        args:
+          - '--markdown-linebreak-ext=rst'
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.7.4
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
